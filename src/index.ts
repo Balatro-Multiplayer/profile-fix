@@ -21,7 +21,6 @@ app.post('/fix', async (c) => {
     const decompressedData = decompress(arrayBuffer)
     const fixed = fixCorruption(decompressedData)
     const compressedData = compress(fixed)
-    console.log(fixed)
     // send it back to client
     return new Response(compressedData, {
       headers: {
